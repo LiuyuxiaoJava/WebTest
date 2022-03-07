@@ -26,4 +26,7 @@ public interface UserService {
     List<Caipin> getAllCaipin() throws SQLException;
 
     boolean addCaipin(Caipin cp) throws SQLException;
+
+    boolean removeCaipin(int id) throws SQLException;
+    boolean updateCaipin(int id) throws SQLException;
 }

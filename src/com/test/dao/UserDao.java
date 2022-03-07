@@ -33,4 +33,18 @@ public interface UserDao {
      * @return
      */
     int addCaipin(Caipin cp) throws SQLException;
+
+    /**
+     * 根据id删除商品
+     * @param id
+     * @return
+     */
+    int removeCaipin(int id) throws SQLException;
+
+    /**
+     * 根据id修改商品
+     * @param id
+     * @return
+     */
+    int updateCaipin(int id) throws SQLException;
 }

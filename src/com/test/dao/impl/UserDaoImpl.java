@@ -18,6 +18,7 @@ import java.util.Map;
  * @date 2022/3/6 11:05
  */
 public class UserDaoImpl implements UserDao {
+    private  Caipin caipin=new Caipin();
     private QueryRunner queryRunner=new QueryRunner();
     @Override
     public Map<String, Object> isLogin(String name, String password) throws SQLException {
@@ -34,5 +35,15 @@ public class UserDaoImpl implements UserDao {
         return queryRunner.update(JdbcUtil.getConn(),
                 "INSERT INTO caipin SET caiName='" + cp.getCaiName() + "',kouwei='" + cp.getKouwei() + "',pic='"
                         + cp.getPic() + "',price=" + cp.getPrice() + ",miaoshu='" + cp.getMiaoshu() + "'");
+    }
+    @Override
+    public int removeCaipin(int id) throws SQLException {
+        return queryRunner.update(JdbcUtil.getConn(),"DELETE from caipin where id='"+id+"'");
+    }
+
+    @Override
+    public int updateCaipin(int id) throws SQLException {
+        return queryRunner.update(JdbcUtil.getConn(),"update caipin set caiName='"+caipin.getCaiName()+"',kouwei='"+caipin.getKouwei()+"'" +
+                ",pic='"+caipin.getPic()+"',price='"+caipin.getPrice()+"',miaoshu='"+caipin.getMiaoshu()+"' where id='"+caipin.getId()+"'");
     }
 }

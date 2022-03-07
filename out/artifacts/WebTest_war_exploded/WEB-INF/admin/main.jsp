@@ -25,6 +25,8 @@
                 <th>图片</th>
                 <th>价格</th>
                 <th>描述</th>
+                <th>DEL</th>
+                <th>UPDATE</th>
             </tr>
             </thead>
             <tbody>
@@ -39,6 +41,8 @@
                 <td><%=cp.getPic() %></td>
                 <td><%=cp.getPrice() %></td>
                 <td><%=cp.getMiaoshu() %></td>
+                <td><a href="Remove?userid=<%=cp.getId()%>">删除</a></td>
+                <td><a href="Update?userid=<%=cp.getId()%>">修改</a></td>
             </tr>
             <%
                 }

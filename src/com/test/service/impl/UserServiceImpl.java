@@ -51,4 +51,22 @@ public class UserServiceImpl implements UserService {
         }
         return false;
     }
+
+    @Override
+    public boolean removeCaipin(int id) throws SQLException {
+        int i=user.removeCaipin(id);
+        if (i>-1){
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public boolean updateCaipin(int id) throws SQLException {
+        int i=user.updateCaipin(id);
+        if (i>-1){
+            return true;
+        }
+        return false;
+    }
 }
