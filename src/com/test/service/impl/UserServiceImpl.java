@@ -7,8 +7,6 @@ import com.test.service.UserService;
 
 import javax.servlet.http.HttpServletRequest;
 import java.sql.SQLException;
-import java.sql.SQLOutput;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
