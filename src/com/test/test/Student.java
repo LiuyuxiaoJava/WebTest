@@ -41,9 +41,8 @@ public class Student {
         }*/
         System.out.println("请输入您要查询的学生name");
         String quer = input.next();
-        quer=name[0];
         for (int i = 0; i < number; i++) {
-            if (quer.equals(name[i])){
+            if (name[i].equals(quer)){
                 System.out.println("name is " + name[i]+"成绩 is " + grade[i]);
                 return;
             }
