@@ -44,6 +44,6 @@ public class UserDaoImpl implements UserDao {
     @Override
     public int updateCaipin(int id) throws SQLException {
         return queryRunner.update(JdbcUtil.getConn(),"update caipin set caiName='"+caipin.getCaiName()+"',kouwei='"+caipin.getKouwei()+"'" +
-                ",pic='"+caipin.getPic()+"',price='"+caipin.getPrice()+"',miaoshu='"+caipin.getMiaoshu()+"' where id='"+caipin.getId()+"'");
+                ",pic='"+caipin.getPic()+"',price='"+caipin.getPrice()+"',miaoshu='"+caipin.getMiaoshu()+"' where id='"+id+"'");
     }
 }
