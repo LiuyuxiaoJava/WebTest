@@ -3,6 +3,7 @@ package com.test.test;
 import java.util.Scanner;
 
 /**
+ * 有问题，但是不想写了!!!!
  * @author Liuyuxiao
  * @version 1.0
  * @description: TODO
@@ -11,6 +12,7 @@ import java.util.Scanner;
 public class Student {
     public static void main(String[] args) {
         Scanner input=new Scanner(System.in);
+        boolean flag=false;
         System.out.println("请输出数组的长度");
         int number=input.nextInt();//输入学生的个数;
         String[] name=new String[number];//定义字符串型的数组;
@@ -30,25 +32,29 @@ public class Student {
             }
         }
         System.out.println("最大的是"+maxname+":"+max);
-/*        System.out.println("小于60分为不及格==》");
+        System.out.println("小于60分为不及格==》");
         for (int i = 0; i <number; i++) {
             if (grade[i]<60){
+                flag=true;
                 System.out.println("name is " + name[i]+"成绩 is " + grade[i]);
             }
-            else{
-                System.out.println("没有不及格的");
-            }
-        }*/
+        }
+        if (!flag){
+            System.out.println("没有不及格的");
+        }
         System.out.println("请输入您要查询的学生name");
         String quer = input.next();
-        for (int i = 0; i < number; i++) {
-            if (name[i].equals(quer)){
-                System.out.println("name is " + name[i]+"成绩 is " + grade[i]);
-                return;
+        int k;
+        for ( k = 0; k < number-1;k++) {
+            if (quer.equals(name[k])){
+                break;
             }
-            else{
-                System.out.println("查不出人");
-            }
+        }
+        if (flag){
+            System.out.println("查到的人："+quer+"成绩"+grade[k]);
+        }
+        else {
+            System.out.println("查无此人");
         }
         System.out.println("==========");
         for(int i=0;i<number-1;i++)//冒泡排序
